@@ -9,5 +9,7 @@
 ### Вариант 4. Уровень 3.
 
 ```pip3 install pyqt5```
+
 ```cd src/v4lvl3```
+
 ```python main.py```
