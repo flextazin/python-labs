@@ -55,20 +55,21 @@ class form(QMainWindow):
         p = float(self.ui.lineEdit_4.text())
 
         self.model.insertRows(self.i,1)
-        self.model.setData(self.model.index(self.i,1),self.ui.lineEdit.text())
+        self.model.setData(self.model.index(self.i, 1),self.ui.lineEdit.text())
         self.model.setData(self.model.index(self.i, 2), self.ui.lineEdit_2.text())
-        self.model.setData(self.model.index(self.i,3), q)
-        self.model.setData(self.model.index(self.i,4), p)
-        self.model.setData(self.model.index(self.i,5), q * p)
+        self.model.setData(self.model.index(self.i, 3), q)
+        self.model.setData(self.model.index(self.i, 4), p)
+        self.model.setData(self.model.index(self.i, 5), q * p)
         self.model.submitAll()
-        self.i += 1
+        self.i = self.model.rowCount()
         self.ui.lcdNumber.display(self.i)
 
     def delrow(self):
         if self.ui.tableWidget.currentIndex().row() > -1:
             self.model.removeRow(self.ui.tableWidget.currentIndex().row())
-            self.i -= 1
             self.model.select()
+            
+            self.i = self.model.rowCount()
             self.ui.lcdNumber.display(self.i)
         else:
             QMessageBox.question(self,'Message', "Please select a row would you like to delete", QMessageBox.Ok)
@@ -78,14 +79,15 @@ class form(QMainWindow):
         if self.ui.tableWidget.currentIndex().row() > -1:
             q = int(self.ui.lineEdit_3.text())
             p = float(self.ui.lineEdit_4.text())
-
-            record = self.model.record(self.ui.tableWidget.currentIndex().row())
-            record.setValue("Title",self.ui.lineEdit.text())
-            record.setValue("Units",self.ui.lineEdit_2.text())
-            record.setValue("Quantity", q)
-            record.setValue("Price", p)
-            record.setValue("Sum", q * p)
-            self.model.setRecord(self.ui.tableWidget.currentIndex().row(), record)
+            currentIndex = self.ui.tableWidget.currentIndex()
+            print(currentIndex.row())
+            
+            self.model.setData(self.model.index(currentIndex.row(), 1),self.ui.lineEdit.text())
+            self.model.setData(self.model.index(currentIndex.row(), 2), self.ui.lineEdit_2.text())
+            self.model.setData(self.model.index(currentIndex.row(), 3), q)
+            self.model.setData(self.model.index(currentIndex.row(), 4), p)
+            self.model.setData(self.model.index(currentIndex.row(), 5), q * p)
+            self.model.submitAll()
         else:
             QMessageBox.question(self,'Message', "Please select a row would you like to update", QMessageBox.Ok)
             self.show()
