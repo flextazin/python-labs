@@ -73,6 +73,6 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Кол-во"))
         self.label_4.setText(_translate("MainWindow", "Цена"))
         self.pushButton.setText(_translate("MainWindow", "Добавить"))
-        self.pushButton_2.setText(_translate("MainWindow", "Редактировать"))
+        self.pushButton_2.setText(_translate("MainWindow", "Обновить"))
         self.pushButton_3.setText(_translate("MainWindow", "Удалить"))
 

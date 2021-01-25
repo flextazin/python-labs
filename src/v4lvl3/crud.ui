@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Simple CRUD(Create, Update, Delete)</string>
+   <string>Заказы</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
@@ -24,7 +24,6 @@
      </rect>
     </property>
     <property name="title">
-     <string>Data</string>
     </property>
     <widget class="QLCDNumber" name="lcdNumber">
      <property name="geometry">
@@ -46,7 +45,6 @@
       </rect>
      </property>
      <property name="text">
-      <string>Name</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit">
@@ -69,7 +67,6 @@
       </rect>
      </property>
      <property name="text">
-      <string>Surname</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_2">
@@ -92,7 +89,6 @@
       </rect>
      </property>
      <property name="text">
-      <string>Phone</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_3">
@@ -115,7 +111,6 @@
       </rect>
      </property>
      <property name="text">
-      <string>DOB</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_4">
@@ -170,7 +165,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Add</string>
+       <string>Добавить</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_2">
@@ -183,7 +178,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Update</string>
+       <string>Обновить</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_3">
@@ -196,7 +191,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Delete</string>
+       <string>Удалить</string>
       </property>
      </widget>
     </widget>

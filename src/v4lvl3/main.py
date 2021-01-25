@@ -72,7 +72,7 @@ class form(QMainWindow):
             self.i = self.model.rowCount()
             self.ui.lcdNumber.display(self.i)
         else:
-            QMessageBox.question(self,'Message', "Please select a row would you like to delete", QMessageBox.Ok)
+            QMessageBox.question(self,'Message', "Выберите строку к удаленю", QMessageBox.Ok)
             self.show()
 
     def updaterow(self):
@@ -89,7 +89,7 @@ class form(QMainWindow):
             self.model.setData(self.model.index(currentIndex.row(), 5), q * p)
             self.model.submitAll()
         else:
-            QMessageBox.question(self,'Message', "Please select a row would you like to update", QMessageBox.Ok)
+            QMessageBox.question(self,'Message', "Выберите строку для сохранения", QMessageBox.Ok)
             self.show()
 
 if __name__ == '__main__':
